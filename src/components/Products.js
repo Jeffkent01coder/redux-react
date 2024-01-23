@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-function Product() {
+function Products() {
   const [products, getProducts] = useState([]);
 
   useEffect(() => {
     // api
-    fetch("https://fakestoreapi.com/products")
+    fetch(
+      "https://fakestoreapi.com/productshttps://api.escuelajs.co/api/v1/products"
+    )
       .then((data) => data.json())
       .then((result) => getProducts(result));
   }, []);
@@ -19,7 +21,7 @@ function Product() {
           <div className="text-center">
             <Card.Img
               variant="top"
-              src={product.image}
+              src={product.images[0]}
               style={{ width: "100px", height: "130px" }}
             />
           </div>
@@ -35,6 +37,8 @@ function Product() {
     );
   });
 
+  console.log(products);
+
   return (
     <>
       <h1>Product Dashboard</h1>
@@ -43,4 +47,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default Products;
