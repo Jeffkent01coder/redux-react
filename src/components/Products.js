@@ -8,7 +8,7 @@ function Products() {
   useEffect(() => {
     // api
     fetch(
-      "https://fakestoreapi.com/productshttps://api.escuelajs.co/api/v1/products"
+      "https://fakestoreapi.com/products"
     )
       .then((data) => data.json())
       .then((result) => getProducts(result));
@@ -21,7 +21,7 @@ function Products() {
           <div className="text-center">
             <Card.Img
               variant="top"
-              src={product.images[0]}
+              src={product.image}
               style={{ width: "100px", height: "130px" }}
             />
           </div>
